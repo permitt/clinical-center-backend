@@ -35,7 +35,7 @@ jobs:
       - run:
           command: |
             pipenv run python manage.py test
-            - sonarcloud/scan
+      - sonarcloud/scan            
       - store_test_results:
           path: test-results
       - store_artifacts:

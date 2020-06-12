@@ -180,7 +180,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-import dj-database-url
+import dj_database_url
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)

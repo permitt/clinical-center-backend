@@ -10,6 +10,7 @@ workflows:
             branches:
               only: master
 
+version: 2
 jobs:
   build:
     working_directory: ~/clinical-center-backend
@@ -46,7 +47,7 @@ jobs:
       - store_artifacts:
           path: test-results
           destination: tr1
- deploy:
+  deploy:
     steps:
       - checkout
       - run:

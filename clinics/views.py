@@ -308,7 +308,7 @@ def appointmentCheck(request):
                       rating = Avg('ratings__rating'),
                       duration = Subquery(appTypes.values('duration')),
                       ) \
-            .filter(specializations__typeOf__typeName=appointmentType, busyHours__lte=((F('endTime')-F('startTime'))/60000000)-F('duration')).distinct()
+            .filter(specializations__typeOf__typeName=appointmentType, busyHours__lte=((F('endTime')-F('startTime'))/60000000)-ExpressionWrapper(F('duration'), output_field=DurationField())).distinct()
 
         priceList = PriceList.objects.filter(clinic=OuterRef('id'), appointmentType__typeName=appointmentType)
         appointments = []

@@ -1,7 +1,3 @@
-version: 2
-orbs:
-  heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
-
 workflows:
   version: 2
   build-deploy:

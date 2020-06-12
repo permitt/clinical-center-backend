@@ -5,6 +5,7 @@ orbs:
 version: 2
 jobs:
   build:
+    context: SonarCloud
     working_directory: ~/clinical-center-backend
     docker:
       - image: circleci/python:3.7.7
@@ -53,8 +54,7 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
-      context: SonarCloud
+      - build    
       - deploy:
           requires:
             - build

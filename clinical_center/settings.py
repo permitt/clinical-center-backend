@@ -75,7 +75,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://obscure-garden-67271.herokuapp.com/",
+    "https://obscure-garden-67271.herokuapp.com",
 ]
 
 ROOT_URLCONF = 'clinical_center.urls'

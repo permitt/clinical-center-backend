@@ -3,10 +3,11 @@ orbs:
   heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
 
 workflows:
-  heroku_deploy:
+  version: 2
+  build-deploy:
     jobs:
       - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+      - deploy:
           requires:
             - build
           filters:
@@ -49,8 +50,7 @@ jobs:
       - store_artifacts:
           path: test-results
           destination: tr1
-
-deploy:
+ deploy:
     steps:
       - checkout
       - run:

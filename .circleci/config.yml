@@ -43,13 +43,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy Master to Heroku
+          name: Deploy Master to Heroku App
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
-  
+
 version: 2.1
 workflows:
   build-deploy:

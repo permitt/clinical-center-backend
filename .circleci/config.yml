@@ -50,19 +50,14 @@ jobs:
 
 
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-
-
-
+  sonarcloud: socialtables/sonarcloud@1.0.1
+version: 2.1
 workflows:
-  version: 2
   build-deploy:
     jobs:
       - build:
-        context: SonarCloud          
-      - deploy:
-          requires:
-            - build
+          context: SonarCloud
           filters:
-            branches:
-              only: master
+            tags:
+              only: /.*/
+  version: 2

@@ -47,9 +47,9 @@ jobs:
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
-
 orbs:
-  sonarcloud: socialtables/sonarcloud@1.0.1
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+  
 version: 2.1
 workflows:
   build-deploy:
